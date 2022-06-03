@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Reproductive Health Provider Network</title>
+
+        <!-- Favicons -->
+        <link href="{% static 'imgs/favicon.png' %}" rel="icon">
+        <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+        <!-- =======================================================
+        * Product Name: Online Fleet Management System
+        * Author: Alexander Waya Nguku
+        * Email: alex.waya@gmail.com
+        * Mobile: +254 (0) 716 715 768
+        * License: All Rights Reserved
+        * Unknown gallons of coffee went into this
+      ======================================================== -->
+
+    </head>
+
+    <body class="sb-nav-fixed">
+
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">
+                <img src="{% static 'imgs/logo.png' %}" style="width: 200px; height: 45px;">
+            </a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+            
+            <li class="nav-item ml-auto" style="color: #fff; text-decoration: none; list-style-type: none;">
+
+                <i class="fa fa-bell" aria-hidden="true"></i>
+                Notifications (0)
+
+            </li>
+            <li class="nav-item" style="color: #fff; text-decoration: none; list-style-type: none;">
+                &nbsp; |
+            </li>
+
+
+            <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user fa-fw"></i>
+                        Admin Dashboard
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+
+                            <div class="sb-sidenav-menu-heading" style="margin-top: -15px;">RHPN MNGT System</div>
+                            <a class="nav-link" href="{% url 'admin_index' %}" style="margin-top: -10px;">
+                                <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+                                <span style="font-size: small;">Dashboard > Home</span>
+                            </a>
+
+                            
+                            <div class="sb-sidenav-menu-heading" style="margin-top: -15px;">STAFF MANAGER</div>
+                            <a class="nav-link" href="" style="margin-top: -10px;">
+                                <div class="sb-nav-link-icon"><i class="fa fa-users"></i></div>
+                                <span style="font-size: small;">All Staff</span>
+                            </a>
+                            <a class="nav-link" href="" style="margin-top: -10px;">
+                                <div class="sb-nav-link-icon"><i class="fa fa-user-plus"></i></div>
+                                <span style="font-size: small;">New Staff</span>
+                            </a>
+
+
+                            <div class="sb-sidenav-menu-heading" style="margin-top: -15px;">VEHICLE MANAGER</div>
+                            <a class="nav-link" href="" style="margin-top: -10px;">
+                                <div class="sb-nav-link-icon"><i class="fa fa-car"></i></div>
+                                <span style="font-size: small;">All Vehicles</span>
+                            </a>
+                            <a class="nav-link" href="" style="margin-top: -10px;">
+                                <div class="sb-nav-link-icon"><i class="fa fa-taxi"></i></div>
+                                <span style="font-size: small;">New Vehicle</span>
+                            </a>
+
+
+                            <div class="sb-sidenav-menu-heading" style="margin-top: -15px;">EXPENSES TRACKER</div>
+                            
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts" style="margin-top: -10px;">
+                                <div class="sb-nav-link-icon"><i class="fa fa-stethoscope"></i></div>
+                                <span style="font-size: small;">Fuel Expenditure</span>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="" style="margin-top: -10px;"><span style="font-size: small;">All Fuel E.</span></a>
+                                    <a class="nav-link" href="" style="margin-top: -10px;"><span style="font-size: small;">Add Fuel E.</span></a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBrenda" aria-expanded="false" aria-controls="collapseBrenda"style="margin-top: -10px;">
+                                <div class="sb-nav-link-icon"><i class="fa fa-cog"></i></div>
+                                <span style="font-size: small;">Repairs & Maintenance</span>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseBrenda" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="" style="margin-top: -10px;"><span style="font-size: small;">All R&M</span></a>
+                                    <a class="nav-link" href="" style="margin-top: -10px;"><span style="font-size: small;">Add R&M</span></a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseWaya" aria-expanded="false" aria-controls="collapseWaya"style="margin-top: -10px;">
+                                <div class="sb-nav-link-icon"><i class="fa fa-wrench"></i></div>
+                                <span style="font-size: small;">Spare Parts</span>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseWaya" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="" style="margin-top: -10px;"><span style="font-size: small;">All Spare</span></a>
+                                    <a class="nav-link" href="" style="margin-top: -10px;"><span style="font-size: small;">Add Spares</span></a>
+                                </nav>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small text-muted">&copy;2022 - RHPN MNGT System</div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- main starts -->
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="">
+                        {% block dashboard_content %}
+
+
+                        {% endblock %}
+                    </div>
+                </main>
+
+
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Version 1.0</div>
+                            <div class="text-muted">
+                                 <!-- Crafted by
+                                <a href="#">Alex Waya</a>
+                                &middot; -->
+                                Support:
+                                <a href="tel://0716715768" title="Call Alex Waya">0716715768</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'js/chart-area-demo.js' %}"></script>
+        <script src="{% static 'js/chart-bar-demo.js' %}"></script>
+        <script src="{% static 'js/chart-pie-demo.js' %}"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'js/datatables-demo.js' %}"></script>
+
+        <script type="text/javascript">
+            $breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E");
+        </script>
+
+    </body>
+</html>
