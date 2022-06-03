@@ -1,0 +1,127 @@
+{% extends 'manager/admin_dash.html' %}
+{% load static %}
+
+{% block title %}Add New Facility{% endblock %}
+
+{% block dashboard_content %}
+
+<div class="container" style="padding-bottom: 25px;">
+
+	<div class="container">
+
+		<h5 class="mt-4"></h5>
+		
+		    <nav aria-label="breadcrumb" style="font-size: 14px; font-weight: 500;">
+			  	<ol class="breadcrumb">
+			    	<li class="breadcrumb-item"><a style="color: #139646;" href="{% url 'admin_index' %}">DASHBOARD</a></li>
+			    	<li class="breadcrumb-item active" aria-current="page" style="color: #111;">All Facilities</li>
+			    	<li style="margin-top: px; margin-left:655px;">
+			    		<a href="#" class="" style="padding:2px;">
+
+			    			<span onclick="exportToExcel('dataTable', 'vehicle-data')" style="border-bottom-width: 1px; border-bottom-color: #000; border-bottom-style: dotted;">EXPORT
+				    			<svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" fill="currentColor" class="bi bi-arrow-up-right-circle-fill" viewBox="0 0 16 16">
+								  	<path d="M0 8a8 8 0 1 0 16 0A8 8 0 0 0 0 8zm5.904 2.803a.5.5 0 1 1-.707-.707L9.293 6H6.525a.5.5 0 1 1 0-1H10.5a.5.5 0 0 1 .5.5v3.975a.5.5 0 0 1-1 0V6.707l-4.096 4.096z"/>
+								</svg>
+							</span>
+
+			    		</a>
+			    	</li>
+			  	</ol>
+			</nav>
+
+	    	<main>
+
+		        <div class="card mb-4">
+		            <!-- <div class="card-header">
+		                <i class="fas fa-table mr-1"></i>
+		                All Property Details - All
+		            </div> -->
+		            <div class="card-body">
+		                <div class="table-responsive">
+		                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+		                        <thead>
+		                            <tr>
+		                            	<th>Facility Name</th>
+		                                
+		                                <th>Country</th>
+		                                <th>County</th>
+                                        <th>Sub county</th>
+
+                                        <th>Level</th>
+                                        <th>Contact</th>
+		                                
+		                            </tr>
+		                        </thead>
+		                        <!-- <tfoot>
+		                            <tr>
+		                            	<th>Vehicle Type</th>
+		                                <th>No. Plate</th>
+		                                <th>Region</th>
+		                                <th>Staff</th>
+		                                <th>Fuel Mode</th>
+		                                <th>Gear</th>
+		                            </tr>
+		                        </tfoot> -->
+		                        <tbody>
+
+		                        	{% for post in posts %}
+
+			                            <tr>
+			                            	<td>{{ post.facility_name }}</td>
+			                                <td>{{ post.country }}</td>
+			                                <td>{{ post.district_or_county }}</td>
+		                                    <td>{{ post.sub_county }}</td>
+			                                <td>{{ post.level }}</td>
+			                                <td>{{ post.health_facility_contact }}</td>
+			                            </tr>
+
+		                            {% endfor %}
+		                            
+		                        </tbody>
+		                    </table>
+		                </div>
+		            </div>
+		        </div>
+
+	    	</main>
+
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+		function exportToExcel(dataTable, filename = ''){
+		    var downloadurl;
+		    var dataFileType = 'application/vnd.ms-excel';
+		    var tableSelect = document.getElementById(dataTable);
+		    var tableHTMLData = tableSelect.outerHTML.replace(/ /g, '%20');
+		    
+		    // Specify file name
+		    filename = filename?filename+'.xls':'export_excel_data.xls';
+		    
+		    // Create download link element
+		    downloadurl = document.createElement("a");
+		    
+		    document.body.appendChild(downloadurl);
+		    
+		    if(navigator.msSaveOrOpenBlob){
+		        var blob = new Blob(['\ufeff', tableHTMLData], {
+		            type: dataFileType
+		        });
+		        navigator.msSaveOrOpenBlob( blob, filename);
+		    }else{
+		        // Create a link to the file
+		        downloadurl.href = 'data:' + dataFileType + ', ' + tableHTMLData;
+		    
+		        // Setting the file name
+		        downloadurl.download = filename;
+		        
+		        //triggering the function
+		        downloadurl.click();
+		    }
+		}
+
+</script>
+
+{% endblock %}
