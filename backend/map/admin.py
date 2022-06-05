@@ -21,5 +21,5 @@ class FacilityAdmin(admin.ModelAdmin):
 # class CategoryAdmin(admin.ModelAdmin):
 #     pass
 
-admin.site.register(Facility, FacilityAdmin)
+admin.site.register(Facility, MapAdmin)
 #admin.site.register(Category, CategoryAdmin)
