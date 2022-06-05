@@ -9,6 +9,9 @@ class FacilityForm(forms.ModelForm):
         model = Facility
         fields = (
 
+            "location",
+            "address",
+            
             'facility_name',
             'partner_instituition',
             'health_facility_contact',

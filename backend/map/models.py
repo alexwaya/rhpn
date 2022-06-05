@@ -1,10 +1,14 @@
 from django.db import models
+from mapbox_location_field.models import LocationField, AddressAutoHiddenField
 
 
 from staff.models import CustomUser
 
 class Facility(models.Model):
-
+    location = LocationField(
+        map_attrs={"style": "mapbox://styles/mightysharky/cjwgnjzr004bu1dnpw8kzxa72", "center": (17.031645, 51.106715)})
+    address = AddressAutoHiddenField()
+    
     facility_name = models.CharField(max_length=255) #Facility Name (Open-ended)
     partner_instituition = models.CharField(max_length=255) #Partner Institution (Open-ended)
     health_facility_contact = models.CharField(max_length=255) #Health Facility Contact (Open-ended)

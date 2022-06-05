@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'pages',
     'manager',
     'map',
+    'mapbox_location_field',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MAPBOX_KEY = 'pk.eyJ1IjoiYWxleHRoZWdlZWsiLCJhIjoiY2tqbWQxdGc5MGgzcDJ4dGZjZmF1M2dhdiJ9.XUyjlHFonYnhEbfQanKREg'
