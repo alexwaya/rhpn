@@ -45,7 +45,7 @@ class Facility(models.Model):
     service_provider_trained_and_offering_pac_services = models.CharField(max_length=255) #Service provider trained and offering PAC services? (Drop down)
     provide_cervical_screening_services_pap_smear = models.CharField(max_length=255) # Do you provide cervical screening services (Pap Smear)? (Drop down)
     provide_cervical_screening_services_via_or_vili = models.CharField(max_length=255) #Do you provide cervical screening services (VIA/VILI)? (Drop down)
-    service_provider_trained_and_offering_cervical_screening_services = models.CharField(max_length=255) # Service provider trained and offering cervical screening services? (Drop down)
+    service_provide_train_and_offer_cervix_services = models.CharField(max_length=255) # Service provider trained and offering cervical screening services? (Drop down)
 
     where_you_refer_on_fp_cervical_cancer_screening = models.CharField(max_length=255) # Where do you refer on cervical cancer screening cases? (Open-ended)
     partners_in_the_area_doing_similar_work = models.CharField(max_length=255) #Names of partners in the area doing similar work (Open-ended)

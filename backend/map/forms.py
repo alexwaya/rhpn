@@ -48,7 +48,7 @@ class FacilityForm(forms.ModelForm):
             'service_provider_trained_and_offering_pac_services',
             'provide_cervical_screening_services_pap_smear',
             'provide_cervical_screening_services_via_or_vili',
-            'service_provider_trained_and_offering_cervical_screening_services',
+            'service_provide_train_and_offer_cervix_services',
 
             'where_you_refer_on_fp_cervical_cancer_screening',
             'partners_in_the_area_doing_similar_work',
