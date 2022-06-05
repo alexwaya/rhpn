@@ -6,7 +6,7 @@ from staff.models import CustomUser
 
 class Facility(models.Model):
     location = LocationField(
-        map_attrs={"style": "mapbox://styles/mightysharky/cjwgnjzr004bu1dnpw8kzxa72", "center": [17.031645, 51.106715], "marker_color": "blue"})
+        map_attrs={"style": "mapbox://styles/mightysharky/cjwgnjzr004bu1dnpw8kzxa72", "center": [-1.292066, 36.821946], "marker_color": "blue"})
     address = AddressAutoHiddenField()
 
     facility_name = models.CharField(max_length=255) #Facility Name (Open-ended)

@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,6 +9,9 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Admin - RPHN GIS System</title>
+
+        {% load mapbox_location_field_tags %}
+        {% location_field_includes %}
 
         <!-- Favicons -->
         <link href="{% static 'imgs/favicon.png' %}" rel="icon">
@@ -84,7 +88,7 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-users"></i></div>
                                 <span style="font-size: small;">All Facilities</span>
                             </a>
-                            <a class="nav-link" href="" style="margin-top: -10px;">
+                            <a class="nav-link" href="{% url 'add_facility' %}" style="margin-top: -10px;">
                                 <div class="sb-nav-link-icon"><i class="fa fa-user-plus"></i></div>
                                 <span style="font-size: small;">Add Facility</span>
                             </a>

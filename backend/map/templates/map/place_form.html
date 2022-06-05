@@ -1,0 +1,171 @@
+{% extends 'manager/admin_dash.html' %}
+{% load static %}
+
+{% block title %}Add New Facility{% endblock %}
+
+{% block dashboard_content %}
+
+<div class="container" style="padding-bottom: 25px;">
+
+	<div class="container">
+
+		<h5 class="mt-4"></h5>
+		    <nav aria-label="breadcrumb" style="font-size: 14px; font-weight: 500;">
+			  	<ol class="breadcrumb">
+			    	<li class="breadcrumb-item"><a style="color: #139646;" href="{% url 'admin_index' %}">DASHBOARD</a></li>
+			    	<li class="breadcrumb-item active" aria-current="page" style="color: #111;">Add Facility</li>
+			  	</ol>
+			</nav>
+
+	    	<main>
+	    		<div class="row" style="padding-right: 12px;">
+ 
+			        <div class="col-md-8" style="padding-right: 40px; font-size: 14.5px; font-family: 'Montserrat', sans-serif;">
+
+			            <hr style="margin-top: 0px; margin-bottom: 23px; background-color: #139646; height: 0px;">
+
+			            <form method="POST" class="post-form"> 
+
+			                {% csrf_token %}
+                            {{ form.as_p }} 
+
+			                <!-- <div class="row">
+
+			                  	<div class="col-md-6">
+			                    	<div class="form-group">
+				                      	<label for="exampleInputEmail1" style="margin-bottom: 1px;">Vehicle Type*</label>
+				                      	<select class="form-control form-control-sm" name="vehicle_type" aria-describedby="emailHelp" placeholder="" required>
+								            <option value = "Please Select One" selected>Please Select One</option>
+								            <option value = "Isuzu Truck">Isuzu Truck</option>
+								            <option value = "Mitsubishi Truck">Mitsubishi Truck</option>
+								            <option value = "Nissan Caravan">Nissan Caravan</option>
+
+								            <option value = "Toyota Hillux Double Cab">Toyota Hillux Double Cab</option>
+								            <option value = "Toyota Prado TZ">Toyota Prado TZ</option>
+								            <option value = "Toyota Succeed">Toyota Succeed</option>
+
+								            <option value = "Toyota Single Cab">Toyota Single Cab</option>
+								            <option value = "Mazda CX5">Mazda CX5</option>
+								            <option value = "Boxer Motorcycle">Boxer Motorcycle</option>
+
+								            <option value = "Skygo/TVS Motorcycle">Skygo/TVS Motorcycle</option>
+
+								        </select>
+				                	</div>
+			                  	</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+								      	<label for="exampleInputEmail1" style="margin-bottom: 1px;">Number Plate*</label>
+								      	<input type="text" class="form-control form-control-sm" name="vehicle_reg_no" aria-describedby="emailHelp" placeholder="Number Plate" required>
+									</div>
+								</div>
+
+			                </div> -->
+
+			                <!-- <div class="row">
+
+			                  	<div class="col-md-6">
+			                    	<div class="form-group">
+				                      	<label for="exampleInputEmail1" style="margin-bottom: 1px;">Region Assigned.*</label>
+				                      	<select class="form-control form-control-sm" name="vehicle_region" aria-describedby="emailHelp" placeholder="Region" required>
+								            <option value = "Computer Architecture" selected>Please Select One</option>
+								            <option value = "Metropolitan">Metropolitan</option>
+								            <option value = "Lower Eastern">Lower Eastern</option>
+
+								            <option value = "Mt. Kenya">Mt. Kenya</option>
+								            <option value = "North Rift">North Rift</option>
+
+								            <option value = "Nakuru">Nakuru</option>
+								            <option value = "Narok/Kericho/Bomet">Narok/Kericho/Bomet</option>
+
+								            <option value = "Oloitoktok">Oloitoktok</option>
+								            <option value = "Distribution">Distribution</option>
+
+								            <option value = "Management">Management</option>
+								        </select>
+				                	</div>
+			                  	</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+								      	<label for="exampleInputEmail1" style="margin-bottom: 1px;">Assign Staff*</label>
+								      	<select class="form-control form-control-sm" name="vehicle_staff" aria-describedby="emailHelp" placeholder="Region" required>
+								            <option value = "Computer Architecture" selected>Please Select One</option>
+
+								            {% for post in posts %}
+
+									            <option value = "{{ post.id }}">
+									            	{{ post.first_name }}
+									        	</option>
+
+								            {% endfor %}
+
+								        </select>
+									</div>
+								</div>
+
+			                </div> -->
+
+			                <!-- <div class="row">
+
+			                  	<div class="col-md-6">
+			                    	<div class="form-group">
+				                      	<label for="exampleInputEmail1" style="margin-bottom: 1px;">Mode of fueling.*</label>
+				                      	<select class="form-control form-control-sm" name="vehicle_mode_of_fueling" aria-describedby="emailHelp" placeholder="Region" required>
+								            <option value = "Computer Architecture" selected>Please Select One</option>
+								            <option value = "Cash">Cash</option>
+								            <option value = "Card">Card</option>
+								        </select>
+				                	</div>
+			                  	</div>
+
+								<div class="col-md-6">
+									<div class="form-group">
+								      	<label for="exampleInputEmail1" style="margin-bottom: 1px;">Riding Gear*</label>
+								      	<select class="form-control form-control-sm" name="vehicle_riding_gear" aria-describedby="emailHelp" placeholder="Region">
+								            <option value = "Computer Architecture" selected>Please Select One</option>
+								            <option value = "Yes">Yes</option>
+								            <option value = "No">No</option>
+								            <option value = "N/A">N/A</option>
+
+								        </select>
+									</div>
+								</div>
+
+			                </div> -->
+
+              				<!-- <br> -->
+
+				            <!-- <div class="form-group float-right">
+				                <button type="submit" class="btn btn-sm btn-success">
+				                	Create New Vehicle 
+				                	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+										<path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+										<path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+									</svg>
+				                </button>
+				            </div> -->
+
+			            </form>
+
+			            <!-- <form method="POST" class="post-form">  
+						        {% csrf_token %}  
+						        {{ form.as_p }}  
+						        <button type="submit" class="save btn btn-default">Save</button>  
+						</form>  --> 
+
+			        </div>
+
+			        <div class="col-md-4" style="border: 0.5px solid #111; border-radius: 3px; padding: 10px; background-color: #EAEDED; min-height: 100%;">
+
+			        </div>
+
+    			</div>
+	    	</main>
+
+	</div>
+
+</div>
+
+{% endblock %}
