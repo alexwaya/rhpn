@@ -9,7 +9,7 @@ urlpatterns = [
     path("accounts/", include("staff.urls")),
     path("", include("manager.urls")),
     path("admin/facilities/", include("map.urls")),
-    path('staffs/', include('django.contrib.auth.urls')),
+    path('admin/', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG: # new
